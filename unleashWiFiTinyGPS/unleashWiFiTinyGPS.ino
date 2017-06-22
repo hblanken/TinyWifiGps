@@ -23,8 +23,8 @@ PString pstr(buffer, sizeof(buffer));
 Adafruit_CC3000 cc3000 = Adafruit_CC3000(ADAFRUIT_CC3000_CS, ADAFRUIT_CC3000_IRQ, ADAFRUIT_CC3000_VBAT,
                                          SPI_CLOCK_DIVIDER); // you can change this clock speed but DI
 
-#define WLAN_SSID       "xxx"        // cannot be longer than 32 characters!
-#define WLAN_PASS       "xxx"
+#define WLAN_SSID       "x"        // cannot be longer than 32 characters!
+#define WLAN_PASS       "x"
 // Security can be WLAN_SEC_UNSEC, WLAN_SEC_WEP, WLAN_SEC_WPA or WLAN_SEC_WPA2
 #define WLAN_SECURITY   WLAN_SEC_WPA2
 
@@ -183,7 +183,7 @@ void sendData() {
 
 // Send data 
   Serial.println(F("Sending data"));
-  if (gps.location.isValid() and client.connected()) 
+  if (client.connected()) 
     {
     pstr.begin();     // Empty the buffer
     pstr << millis();
